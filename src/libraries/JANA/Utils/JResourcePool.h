@@ -40,9 +40,11 @@
  *
  **********************************************************************************************************************/
 
-// Apple compiler does not currently support alignas. Make this an empty definition if it is not already defined.
+// Apple compiler (clang) does not currently support alignas. Make this an empty definition if it is not already defined.
+#ifdef __clang__
 #ifndef alignas
 #define alignas(A)
+#endif
 #endif
 
 template <typename DType> class JResourcePool
