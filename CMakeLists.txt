@@ -80,7 +80,7 @@ endif()
 if (${USE_PODIO})
     find_package(podio REQUIRED)
     set(JANA2_HAVE_PODIO 1)
-    set(USE_ROOT ON)
+    # set(USE_ROOT ON) # Disabled for WASM
     include_directories(SYSTEM ${podio_INCLUDE_DIR})
 else()
     set(JANA2_HAVE_PODIO 0)
