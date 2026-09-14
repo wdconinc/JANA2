@@ -68,6 +68,8 @@ uint32_t GetCpuID() {
 #endif // __cpuid_count
     return cpuid;
 
+#elif defined(__EMSCRIPTEN__)
+    return 0;
 #else //__APPLE__
     return sched_getcpu();
 #endif //__APPLE__
