@@ -1,3 +1,4 @@
+include(GNUInstallDirs)
 
 macro(add_jana_library library_name)
 

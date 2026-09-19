@@ -1,3 +1,4 @@
+include(GNUInstallDirs)
 
 macro(add_jana_test test_target_name)
 

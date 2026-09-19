@@ -1,4 +1,6 @@
 
+include(GNUInstallDirs)
+
 macro(add_jana_plugin plugin_name)
 
     # Parse remaining arguments
