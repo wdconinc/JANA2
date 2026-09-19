@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.16)
 cmake_policy(SET CMP0074 NEW) # find_package() uses <PackageName>_ROOT implicit hints
 
 project(jana2 VERSION 2026.03.00)
+if(EMSCRIPTEN)
+    set_property(GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS TRUE)
+    string(APPEND CMAKE_EXE_LINKER_FLAGS " -sMAIN_MODULE=1")
+    string(APPEND CMAKE_SHARED_LINKER_FLAGS " -sSIDE_MODULE=1")
+    string(APPEND CMAKE_MODULE_LINKER_FLAGS " -sSIDE_MODULE=1")
+endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)   # Enable -fPIC for all targets
 
