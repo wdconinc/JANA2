@@ -53,6 +53,8 @@ jobs:
           cp build/src/programs/jana/jana.wasm dist/
           cp build/src/programs/jana/jana.worker.js dist/ || true
           
+          cp build/lib/libJANA.so dist/ || cp build/src/libraries/JANA/libJANA.so dist/
+
           # Copy the plugin side module
           cp build/lib/JANA/plugins/JTest.so dist/ || cp build/src/plugins/JTest/JTest.so dist/
 
