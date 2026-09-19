@@ -327,6 +327,8 @@ project_cmakelists_txt = """
 cmake_minimum_required(VERSION 3.9)
 project({name}_project)
 
+include(GnuInstallDirs)
+
 if(NOT "${{CMAKE_CXX_STANDARD}}")
   set(CMAKE_CXX_STANDARD 17)
 endif()
@@ -384,7 +386,7 @@ set_target_properties({name}_plugin PROPERTIES PREFIX "" OUTPUT_NAME "{name}" SU
 install(TARGETS {name}_plugin DESTINATION plugins)
 
 file(GLOB my_headers "*.h*")
-install(FILES ${{my_headers}} DESTINATION include/{name})
+install(FILES ${{my_headers}} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/{name})
 
 # For root dictionaries
 file(GLOB my_pcms "${{CMAKE_CURRENT_BINARY_DIR}}/*.pcm")
@@ -424,7 +426,7 @@ set_target_properties({name}_plugin PROPERTIES PREFIX "" OUTPUT_NAME "{name}" SU
 install(TARGETS {name}_plugin DESTINATION plugins)
 
 file(GLOB my_headers "*.h*")
-install(FILES ${{my_headers}} DESTINATION include/{name})
+install(FILES ${{my_headers}} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/{name})
 
 # For root dictionaries
 file(GLOB my_pcms "${{CMAKE_CURRENT_BINARY_DIR}}/*.pcm")
@@ -452,7 +454,7 @@ target_include_directories({name}_plugin_tests PUBLIC ${{JANA_INCLUDE_DIR}})
 target_link_libraries({name}_plugin_tests {name}_plugin)
 target_link_libraries({name}_plugin_tests ${{JANA_LIBRARY}})
 
-install(TARGETS {name}_plugin_tests DESTINATION bin)
+install(TARGETS {name}_plugin_tests DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 """
 
