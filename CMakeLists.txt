@@ -11,9 +11,9 @@ if(EMSCRIPTEN)
     string(APPEND CMAKE_CXX_FLAGS " -fwasm-exceptions")
     string(APPEND CMAKE_C_FLAGS " -fwasm-exceptions")
     set_property(GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS TRUE)
-    string(APPEND CMAKE_EXE_LINKER_FLAGS " -sMAIN_MODULE=1 -sWASM_BIGINT=1 -fwasm-exceptions")
-    string(APPEND CMAKE_SHARED_LINKER_FLAGS " -sSIDE_MODULE=1 -sWASM_BIGINT=1 -fwasm-exceptions")
-    string(APPEND CMAKE_MODULE_LINKER_FLAGS " -sSIDE_MODULE=1 -sWASM_BIGINT=1 -fwasm-exceptions")
+    string(APPEND CMAKE_EXE_LINKER_FLAGS " -sMAIN_MODULE=1 -sWASM_BIGINT=1 -fwasm-exceptions -sALLOW_MEMORY_GROWTH=1")
+    string(APPEND CMAKE_SHARED_LINKER_FLAGS " -sSIDE_MODULE=1 -sWASM_BIGINT=1 -fwasm-exceptions -sALLOW_MEMORY_GROWTH=1")
+    string(APPEND CMAKE_MODULE_LINKER_FLAGS " -sSIDE_MODULE=1 -sWASM_BIGINT=1 -fwasm-exceptions -sALLOW_MEMORY_GROWTH=1")
 endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)   # Enable -fPIC for all targets
