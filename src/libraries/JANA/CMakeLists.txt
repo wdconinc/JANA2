@@ -112,7 +112,7 @@ if (${USE_PODIO})
 elseif (${USE_ROOT})
     target_link_libraries(jana2_static_lib PUBLIC ROOT::Core)
 endif()
-install(TARGETS jana2_static_lib EXPORT jana2_targets DESTINATION lib)
+install(TARGETS jana2_static_lib EXPORT jana2_targets DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 
 # Build shared library
@@ -136,7 +136,7 @@ elseif (${USE_ROOT})
     target_link_libraries(jana2_shared_lib PUBLIC ROOT::Core)
 endif()
 
-install(TARGETS jana2_shared_lib EXPORT jana2_targets DESTINATION lib)
+install(TARGETS jana2_shared_lib EXPORT jana2_targets DESTINATION ${CMAKE_INSTALL_LIBDIR})
 set(INSTALL_RPATH_USE_LINK_PATH True)
 
 
