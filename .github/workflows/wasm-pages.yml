@@ -51,7 +51,7 @@ jobs:
           # Copy the WASM artifacts
           cp build/src/programs/jana/jana.js dist/
           cp build/src/programs/jana/jana.wasm dist/
-          cp build/src/programs/jana/jana.worker.js dist/
+          cp build/src/programs/jana/jana.worker.js dist/ || true
           
           # Copy the plugin side module
           cp build/lib/JANA/plugins/JTest.so dist/ || cp build/src/plugins/JTest/JTest.so dist/
