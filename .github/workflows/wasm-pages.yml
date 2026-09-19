@@ -33,7 +33,7 @@ jobs:
           emcmake cmake -B build -S . \
             -DCMAKE_CXX_FLAGS="-pthread -sUSE_PTHREADS=1" \
             -DCMAKE_C_FLAGS="-pthread -sUSE_PTHREADS=1" \
-            -DCMAKE_EXE_LINKER_FLAGS="-pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=navigator.hardwareConcurrency" \
+            -DCMAKE_EXE_LINKER_FLAGS="-sEXPORTED_RUNTIME_METHODS=callMain,FS -pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=navigator.hardwareConcurrency" \
             -DCMAKE_SHARED_LINKER_FLAGS="-pthread -sUSE_PTHREADS=1" \
             -DCMAKE_MODULE_LINKER_FLAGS="-pthread -sUSE_PTHREADS=1" \
             -DBUILD_SHARED_LIBS=ON
