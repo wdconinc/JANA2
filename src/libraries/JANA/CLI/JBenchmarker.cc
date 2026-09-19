@@ -197,7 +197,7 @@ void JBenchmarker::RunUntilFinished() {
 
 #ifdef __EMSCRIPTEN__
 
-    EM_ASM({
+    MAIN_THREAD_EM_ASM({
 
         var rates_path = UTF8ToString($0);
 
