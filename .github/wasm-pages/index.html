@@ -55,10 +55,10 @@
 
         document.getElementById('runBtn').addEventListener('click', function() {
             this.disabled = true;
-            Module.print("\n--- Executing: jana -Pplugins=JTest -Pnthreads=4 -b --nevents=100 ---");
+            Module.print("\n--- Executing: jana -Pplugins=JTest -Pnthreads=4 -b -Pjana:nevents=100 ---");
             
             try {
-                Module.callMain(['-Pplugins=JTest', '-Pnthreads=4', '-b', '--nevents=100']);
+                Module.callMain(['-Pplugins=JTest', '-Pnthreads=4', '-b', '-Pjana:nevents=100']);
             } catch(e) {
                 Module.printErr("Exception caught: " + e);
             }
