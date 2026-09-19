@@ -241,7 +241,7 @@ void JBenchmarker::RunUntilFinished() {
 
             triggerDownload(rates_path);
 
-            triggerDownload(samples_path);
+            setTimeout(function() { triggerDownload(samples_path); }, 500);
 
         } else if (typeof ENVIRONMENT_IS_NODE !== "undefined" && ENVIRONMENT_IS_NODE) {
 
