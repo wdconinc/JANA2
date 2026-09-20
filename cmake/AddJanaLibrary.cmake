@@ -62,7 +62,7 @@ macro(add_jana_library library_name)
         SKIP_BUILD_RPATH FALSE
         BUILD_WITH_INSTALL_RPATH FALSE
         INSTALL_RPATH_USE_LINK_PATH TRUE
-        INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib"
+        INSTALL_RPATH ${CMAKE_INSTALL_LIBDIR}
     )
 
     target_link_libraries(${library_name} PUBLIC "${JANA_NAMESPACE}jana2_static_lib")
@@ -98,7 +98,7 @@ macro(add_jana_library library_name)
             SKIP_BUILD_RPATH FALSE
             BUILD_WITH_INSTALL_RPATH FALSE
             INSTALL_RPATH_USE_LINK_PATH TRUE
-            INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib"
+            INSTALL_RPATH ${CMAKE_INSTALL_LIBDIR}
         )
         #install(TARGETS ${library_name}_tests RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
         add_test(NAME ${library_name}_tests COMMAND ${library_name}_tests)

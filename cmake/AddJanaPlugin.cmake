@@ -71,7 +71,7 @@ macro(add_jana_plugin plugin_name)
         SKIP_BUILD_RPATH FALSE
         BUILD_WITH_INSTALL_RPATH FALSE
         INSTALL_RPATH_USE_LINK_PATH TRUE
-        INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib;${CMAKE_INSTALL_PREFIX}/lib/${INSTALL_NAMESPACE}/plugins"
+        INSTALL_RPATH "${CMAKE_INSTALL_LIBDIR};${CMAKE_INSTALL_LIBDIR}/${INSTALL_NAMESPACE}/plugins"
         LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/JANA/plugins"
     )
 
@@ -104,7 +104,7 @@ macro(add_jana_plugin plugin_name)
             SKIP_BUILD_RPATH FALSE
             BUILD_WITH_INSTALL_RPATH FALSE
             INSTALL_RPATH_USE_LINK_PATH TRUE
-            INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib;${CMAKE_INSTALL_PREFIX}/lib/${INSTALL_NAMESPACE}/plugins"
+            INSTALL_RPATH "${CMAKE_INSTALL_LIBDIR};${CMAKE_INSTALL_LIBDIR}/${INSTALL_NAMESPACE}/plugins"
         )
         #install(TARGETS ${plugin_name}-tests RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
         add_test(NAME ${plugin_name}-tests COMMAND ${plugin_name}-tests)
