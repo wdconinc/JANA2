@@ -356,6 +356,8 @@ add_subdirectory(programs)
 plugin_cmakelists_txt = """
 {extra_find_packages}
 
+include(GNUInstallDirs)
+
 # According to the internet, CMake authors discourage the use
 # of GLOB for identifying source files. IMHO, this is due to
 # the flawed use of cache files in CMake itself. Here, GLOB
@@ -398,6 +400,8 @@ install(FILES ${{my_pcms}} DESTINATION plugins)
 mini_plugin_cmakelists_txt = """
 {extra_find_packages}
 
+include(GNUInstallDirs)
+
 # According to the internet, CMake authors discourage the use
 # of GLOB for identifying source files. IMHO, this is due to
 # the flawed use of cache files in CMake itself. Here, GLOB
@@ -436,6 +440,8 @@ install(FILES ${{my_pcms}} DESTINATION plugins)
 
 
 plugin_tests_cmakelists_txt = """
+
+include(GNUInstallDirs)
 
 set ({name}_PLUGIN_TESTS_SOURCES
         catch.hpp
